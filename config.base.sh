@@ -104,7 +104,7 @@ base_pkgs=(
 
 extra_build_pkgs=(
 	swclock-offset # Timekeeping
-	qbootctl # Mark A/B slots as successfully booted on QCOM devices
+	# qbootctl # Mark A/B slots as successfully booted on QCOM devices
 	unudhcpd usbd # USB gadget setup
 	qcom-fw-setup # Firmware
 	libmbim libqrtr-glib libqmi ModemManager tinyalsa q6voiced # Cellular
@@ -118,7 +118,7 @@ extra_build_pkgs=(
 )
 extra_install_pkgs=(
 	swclock-offset
-	qbootctl
+	# qbootctl
 	unudhcpd usbd
 	qcom-fw-setup
 	ModemManager q6voiced
@@ -134,7 +134,7 @@ extra_install_pkgs=(
 enable_sv=(
 	chronyd dbus bluetoothd socklog-unix nanoklogd # Main
 	swclock-offset # Timekeeping
-	qbootctl # Mark A/B slots as successfully booted on QCOM devices
+	# qbootctl # Mark A/B slots as successfully booted on QCOM devices
 	#haveged elogind
 	sshd
 

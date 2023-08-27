@@ -1,22 +1,67 @@
 . config.base.sh
 
+arch="x86_64"
+
+musl=false
+
+img_size="24G"
+mirror="https://repo-de.voidlinux.org/"
+
+
+extra_void_repos=(
+	nonfree multilib multilib-nonfree
+)
+
 base_pkgs+=(
 	firefox mobile-config-firefox # 192M
 	dejavu-fonts-ttf # for proper font rendering in ff :)
 	noto-fonts-emoji # for emoji keyboard on gnome shell mobile
-	Vulkan-Tools glxinfo mesa-demos # for vkcube and other GPU tools
+	Vulkan-Tools glxinfo # for vkcube and other GPU tools
 	waydroid # for running Android apps
+	flatpak
 )
 extra_build_pkgs+=(
-	mesa
 	mutter gnome-shell # gnome shell mobile
 	portfolio pmos-tweaks
-	megapixels callaudiod feedbackd sofia-sip gnome-calls purism-chatty
+	megapixels callaudiod feedbackd #gnome-calls purism-chatty
 )
 extra_install_pkgs+=(
-	mesa-vulkan-freedreno mesa-vulkan-overlay-layer mesa-tools
 	portfolio pmos-tweaks
-	megapixels gnome-calls purism-chatty
+	megapixels #gnome-calls purism-chatty
+
+	psensor
+	nvtop
+
+	# other stuff
+	sublime-text4
+	telegram-desktop
+	Signal-Desktop
+
+	kicad
+	kicad-footprints
+	kicad-library
+	kicad-packages3D
+	kicad-symbols
+	kicad-templates
+
+	python3
+	python3-pip
+	cmake
+	gcc
+	arduino-cli
+
+	blender
+	krita
+	gimp
+
+	vlc
+	file-roller
+	evince
+	eog
+
+	# steam stuff
+	libgcc-32bit libstdc++-32bit libdrm-32bit libglvnd-32bit
+	steam
 )
 overlays=(
 	# drop somainline overlay temporarily to apply it after EVERYTHING else
@@ -29,6 +74,13 @@ overlays=(
 	sdm845-mainline-alsa-ucm-conf
 
 	somainline
+
+	orchis-theme
+	brave-flatpak
+	discord-flatpak
+
+	megaTinyCore-arduino-cli
+	prusa-slicer-github-latest
 )
 enable_sv=(
 	# drop buffyboard sv to avoid potential input issues in GNOME (https://gitlab.com/cherrypicker/buffyboard/-/issues/21)
@@ -36,4 +88,7 @@ enable_sv=(
 
 	waydroid-container
 )
+# disable_sv+=(
+
+# )
 img_name_format="${img_name_format/-base/-gnome}"
