@@ -71,6 +71,7 @@ overlays=(
 	sdm845-mainline-alsa-ucm-conf
 
 	somainline
+	somainline-gnome-settings
 
 	orchis-theme
 	brave-flatpak
