@@ -9,6 +9,10 @@ sudo ln -s /var/lib/flatpak/app/com.brave.Browser/current/active/export/share/ap
 log "Brave successfully installed"
 log "setting Brave as the default browser..."
 
+installusrs=($USERNAMES)
+
+runas ${installusrs[0]} <<EOF
 xdg-settings set default-web-browser brave.desktop
 xdg-mime default brave.desktop x-scheme-handler/https
 xdg-mime default brave.desktop x-scheme-handler/http
+EOF
