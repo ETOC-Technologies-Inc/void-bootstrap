@@ -5,15 +5,12 @@ arch="x86_64"
 musl=false
 
 img_size="24G"
-mirror="https://repo-de.voidlinux.org/"
-
 
 extra_void_repos=(
 	nonfree multilib multilib-nonfree
 )
 
 base_pkgs+=(
-	firefox mobile-config-firefox # 192M
 	dejavu-fonts-ttf # for proper font rendering in ff :)
 	noto-fonts-emoji # for emoji keyboard on gnome shell mobile
 	Vulkan-Tools glxinfo # for vkcube and other GPU tools
@@ -21,12 +18,13 @@ base_pkgs+=(
 	flatpak
 )
 extra_build_pkgs+=(
+	libphonenumber openimageio openvdb openimageio blender
 	mutter gnome-shell # gnome shell mobile
-	portfolio pmos-tweaks
+	pmos-tweaks
 	megapixels callaudiod feedbackd #gnome-calls purism-chatty
 )
 extra_install_pkgs+=(
-	portfolio pmos-tweaks
+	pmos-tweaks
 	megapixels #gnome-calls purism-chatty
 
 	psensor
@@ -68,7 +66,6 @@ overlays=(
 	${overlays[@]/somainline}
 
 	ui-gnome
-	firefox-wayland
 	pulseaudio
 	qcom_spmi_haptics-feedbackd
 	sdm845-mainline-alsa-ucm-conf
@@ -78,6 +75,7 @@ overlays=(
 	orchis-theme
 	brave-flatpak
 	discord-flatpak
+	gnome-extensions-manager-flatpak
 
 	megaTinyCore-arduino-cli
 	prusa-slicer-github-latest

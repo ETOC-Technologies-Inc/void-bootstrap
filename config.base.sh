@@ -48,9 +48,6 @@ ignorepkg=(
 	nvi # We'll replace this crappy editor in base_pkgs
 )
 noextract=(
-	# Only get firmware that is explicitly needed
-	"/usr/lib/firmware/*"
-
 	# CRDA
 	"!/usr/lib/firmware/regulatory.db*"
 
@@ -66,12 +63,6 @@ noextract=(
 	# A630 GPU (SDM845)
 	!/usr/lib/firmware/qcom/a630_gmu.bin
 	!/usr/lib/firmware/qcom/a630_sqe.fw
-
-	# No rootfs encryption setup -> avoid extra runit stage
-	/etc/crypttab
-
-	# No need for raid -> avoid extra runit stage with additional spam about 4096 block size
-	/usr/bin/dmraid
 
 	# systemd is not an init system choice on Void so these are rather pointless
 	"/usr/lib/systemd/*"
