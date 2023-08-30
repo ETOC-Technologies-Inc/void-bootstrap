@@ -529,6 +529,7 @@ apply_overlays() {
 				$sudo cp -r "$rootfs_dir"/home/ALL/. "$rootfs_dir"/home/$user/
 			done
 			$sudo rm -r "$rootfs_dir"/home/ALL
+			fix_user_perms
 		fi
 	done
 }
