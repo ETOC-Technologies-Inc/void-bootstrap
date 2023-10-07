@@ -101,7 +101,7 @@ extra_build_pkgs=(
 	libmbim libqrtr-glib libqmi ModemManager tinyalsa q6voiced # Cellular
 	diag-router # Modem/WLAN
 	gpsd-pds # GPS
-	kmscube # GPU testing
+	# kmscube # GPU testing
 
 	soctemp pil-squasher qmi-ping qcom-debugcc libgpiod # Extra tools
 	#linuxconsoletools # (e.g. fftest)
@@ -133,7 +133,7 @@ enable_sv=(
 	pd-mapper rmtfs tqftpserv diag-router # Modem/WLAN
 	NetworkManager avahi-daemon # Networking
 	gpsd-pds # GPS
-	neard # NFC
+	# neard # NFC
 	buffyboard # TTY on-screen touch enabled keyboard
 	# TODO: does it still have no keyboard visible with the following spammed on minimal simplefb tree (alpine .config)?
 	#[Warn]  (66.514, +31)    indev_pointer_proc: X is 0 which is greater than hor. res      (in lv_indev.c line #349)
@@ -169,7 +169,7 @@ overlays=(
 	qcom-fw-setup-oneshot
 
 	# Some NFC testing scripts
-	neard-tests
+	# neard-tests
 
 	# Power off sooner on critical battery levels
 	upower-critical-poweroff
