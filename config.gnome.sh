@@ -15,10 +15,14 @@ base_pkgs+=(
 	noto-fonts-emoji # for emoji keyboard on gnome shell mobile
 	Vulkan-Tools glxinfo # for vkcube and other GPU tools
 	waydroid # for running Android apps
+	docker docker-cli # docker
+	grub grub-x86_64-efi syslinux memtest86+ squashfs-tools xorriso dracut # bootloaders
+	binutils xz device-mapper dhclient dracut-network openresolv
+	
+
 	flatpak
 )
 extra_build_pkgs+=(
-	libphonenumber openimageio openvdb openimageio blender
 	mutter gnome-shell # gnome shell mobile
 	pmos-tweaks
 	megapixels callaudiod feedbackd #gnome-calls purism-chatty
@@ -35,12 +39,12 @@ extra_install_pkgs+=(
 	telegram-desktop
 	Signal-Desktop
 
-	kicad
-	kicad-footprints
-	kicad-library
-	kicad-packages3D
-	kicad-symbols
-	kicad-templates
+	# kicad
+	# kicad-footprints
+	# kicad-library
+	# kicad-packages3D
+	# kicad-symbols
+	# kicad-templates
 
 	python3
 	python3-pip
@@ -48,9 +52,9 @@ extra_install_pkgs+=(
 	gcc
 	arduino-cli
 
-	blender
-	krita
-	gimp
+	# blender
+	# krita
+	# gimp
 
 	vlc
 	file-roller
@@ -58,8 +62,8 @@ extra_install_pkgs+=(
 	eog
 
 	# steam stuff
-	libgcc-32bit libstdc++-32bit libdrm-32bit libglvnd-32bit
-	steam
+	# libgcc-32bit libstdc++-32bit libdrm-32bit libglvnd-32bit
+	# steam
 )
 overlays=(
 	# drop somainline overlay temporarily to apply it after EVERYTHING else
@@ -78,7 +82,7 @@ overlays=(
 	discord-flatpak
 	gnome-extensions-manager-flatpak
 
-	megaTinyCore-arduino-cli
+	# megaTinyCore-arduino-cli
 	prusa-slicer-github-latest
 )
 enable_sv=(
@@ -86,6 +90,7 @@ enable_sv=(
 	"${enable_sv[@]/buffyboard}"
 
 	waydroid-container
+	docker
 )
 # disable_sv+=(
 
