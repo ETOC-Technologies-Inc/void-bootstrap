@@ -100,7 +100,7 @@ extra_build_pkgs=(
 	qcom-fw-setup # Firmware
 	libmbim libqrtr-glib libqmi ModemManager tinyalsa q6voiced # Cellular
 	diag-router # Modem/WLAN
-	gpsd-pds # GPS
+	# gpsd-pds # GPS
 	# kmscube # GPU testing
 
 	soctemp pil-squasher qmi-ping qcom-debugcc libgpiod # Extra tools
@@ -114,8 +114,8 @@ extra_install_pkgs=(
 	qcom-fw-setup
 	ModemManager q6voiced
 	diag-router
-	gpsd-pds
-	kmscube
+	# gpsd-pds
+	# kmscube
 
 	soctemp pil-squasher qmi-ping qcom-debugcc libgpiod-tools
 	#linuxconsoletools
@@ -132,7 +132,7 @@ enable_sv=(
 	usbd rndis-tethering # USB gadget setup
 	pd-mapper rmtfs tqftpserv diag-router # Modem/WLAN
 	NetworkManager avahi-daemon # Networking
-	gpsd-pds # GPS
+	# gpsd-pds # GPS
 	# neard # NFC
 	buffyboard # TTY on-screen touch enabled keyboard
 	# TODO: does it still have no keyboard visible with the following spammed on minimal simplefb tree (alpine .config)?
