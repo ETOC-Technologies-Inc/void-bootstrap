@@ -8,6 +8,8 @@ img_size="3G"
 
 img_name_format="nafoarmories-%a-base-rootfs-$(date +'%Y-%m-%d--%H-%M').img"
 
+mirror="https://repo-default.voidlinux.org/"
+
 extra_void_repos=(
 	nonfree multilib multilib-nonfree
 )
@@ -19,6 +21,8 @@ base_pkgs+=(
 	# waydroid # for running Android apps
 	# flatpak
 	mariadb mariadb-client python3 python3-mysqlclient
+
+	nodejs nodejs-devel pnpm
 )
 # extra_build_pkgs+=(
 # 	# libphonenumber openimageio openvdb openimageio blender
