@@ -67,9 +67,9 @@ noextract=(
 	# systemd is not an init system choice on Void so these are rather pointless
 	"/usr/lib/systemd/*"
 )
-rm_pkgs=(
-	nvi btrfs-progs xfsprogs
-)
+# rm_pkgs=(
+# 	nvi btrfs-progs xfsprogs
+# )
 base_pkgs=(
 	socklog-void elogind dbus-elogind # Main
 	#haveged
