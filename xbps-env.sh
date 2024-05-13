@@ -235,7 +235,7 @@ build_packages() {
 	fi
 	if [ ! -e $masterdir/bin/sh ]; then
 		log "Creating new $host_target build chroot..."
-		./xbps-src -m $masterdir binary-bootstrap $host_target
+		./xbps-src -m $masterdir binary-bootstrap -A $host_target
 	fi
 
 	setup_xbps_src_conf
