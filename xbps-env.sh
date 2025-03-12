@@ -235,7 +235,7 @@ build_packages() {
 	fi
 	if [ ! -e $masterdir/bin/sh ]; then
 		log "Creating new $host_target build chroot..."
-		./xbps-src -m $masterdir binary-bootstrap $host_target
+		./xbps-src -m $masterdir binary-bootstrap -A $host_target
 	fi
 
 	setup_xbps_src_conf
@@ -245,7 +245,7 @@ build_packages() {
 	for pkg in ${pkgs_build[@]}; do
 		if [ "$cross_target" ]; then
 			log "Cross-compiling extra package '$pkg' for $cross_target..."
-			./xbps-src -m $masterdir -a $cross_target pkg $pkg
+			./xbps-src -m $masterdir -A $cross_target pkg $pkg
 		else
 			log "Compiling extra package '$pkg' for $host_target..."
 			./xbps-src -m $masterdir pkg $pkg
