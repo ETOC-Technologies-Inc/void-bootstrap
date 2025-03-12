@@ -34,16 +34,16 @@ extra_install_pkgs+=(
 	nvtop
 
 	# other stuff
-	# sublime-text4
-	# telegram-desktop
-	# Signal-Desktop
-	#
-	# kicad
-	# kicad-footprints
-	# kicad-library
-	# kicad-packages3D
-	# kicad-symbols
-	# kicad-templates
+	sublime-text4
+	telegram-desktop
+	Signal-Desktop
+
+	kicad
+	kicad-footprints
+	kicad-library
+	kicad-packages3D
+	kicad-symbols
+	kicad-templates
 
 	python3
 	python3-pip
@@ -51,9 +51,9 @@ extra_install_pkgs+=(
 	gcc
 	arduino-cli
 
-	# blender
-	# krita
-	# gimp
+	blender
+	krita
+	gimp
 
 	vlc
 	file-roller
