@@ -14,33 +14,36 @@ base_pkgs+=(
 	dejavu-fonts-ttf # for proper font rendering in ff :)
 	noto-fonts-emoji # for emoji keyboard on gnome shell mobile
 	Vulkan-Tools glxinfo # for vkcube and other GPU tools
-	waydroid # for running Android apps
 	docker docker-cli # docker
+
+	grub grub-x86_64-efi syslinux memtest86+ squashfs-tools xorriso dracut # bootloaders
+	binutils xz device-mapper dhclient dracut-network openresolv
+	xmirror
+	openssh
+	
 	flatpak
 )
 extra_build_pkgs+=(
 	mutter gnome-shell # gnome shell mobile
-	pmos-tweaks
-	megapixels callaudiod feedbackd #gnome-calls purism-chatty
+	megapixels feedbackd #gnome-calls purism-chatty
 )
 extra_install_pkgs+=(
-	pmos-tweaks
 	megapixels #gnome-calls purism-chatty
 
 	psensor
 	nvtop
 
 	# other stuff
-	sublime-text4
-	telegram-desktop
-	Signal-Desktop
-
-	kicad
-	kicad-footprints
-	kicad-library
-	kicad-packages3D
-	kicad-symbols
-	kicad-templates
+	# sublime-text4
+	# telegram-desktop
+	# Signal-Desktop
+	#
+	# kicad
+	# kicad-footprints
+	# kicad-library
+	# kicad-packages3D
+	# kicad-symbols
+	# kicad-templates
 
 	python3
 	python3-pip
@@ -48,9 +51,9 @@ extra_install_pkgs+=(
 	gcc
 	arduino-cli
 
-	blender
-	krita
-	gimp
+	# blender
+	# krita
+	# gimp
 
 	vlc
 	file-roller
@@ -71,17 +74,14 @@ overlays=(
 
 	orchis-theme
 	brave-flatpak
-	discord-flatpak
 	gnome-extensions-manager-flatpak
 
 	# megaTinyCore-arduino-cli
-	prusa-slicer-github-latest
 )
 enable_sv=(
 	# drop buffyboard sv to avoid potential input issues in GNOME (https://gitlab.com/cherrypicker/buffyboard/-/issues/21)
 	"${enable_sv[@]/buffyboard}"
 
-	waydroid-container
 	docker
 )
 # disable_sv+=(

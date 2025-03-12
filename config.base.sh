@@ -10,6 +10,8 @@ users_groups_common=(
 	video input storage bluetooth network
 	socklog # svlogtail
 	users
+	docker
+	dialout
 )
 users_pw_default="" # disable pass login for root
 users_sudo_askpass=false
@@ -19,11 +21,13 @@ hostname="somainline"
 # overwrite systemd-nspawn stub resolv.conf
 dns=(
 	1.1.1.1
+	8.8.8.8
 	1.0.0.1
+	100.100.100.100
 	2606:4700:4700::1111
 	2606:4700:4700::1001
 )
-#mirror="???"
+mirror="https://repo-de.voidlinux.org/"
 img_name_format="somainline-%a-base-rootfs-$(date +'%Y-%m-%d--%H-%M').img"
 img_size="3G"
 #img_compress="xz"
@@ -74,18 +78,18 @@ base_pkgs=(
 	socklog-void elogind dbus-elogind # Main
 	#haveged
 	chrony # Time & date
-	linux-firmware-{network,qualcomm} # Firmware
+	linux-firmware-{network,qualcomm,intel,amd,broadcom} # Firmware
 	bluez # Bluetooth
 	NetworkManager avahi # Networking
 	neard # NFC
-	crda pd-mapper rmtfs tqftpserv # Modem/WLAN
+	pd-mapper rmtfs tqftpserv # Modem/WLAN
 	alsa-ucm-conf # Audio
 
 	zsh zsh-completions zsh-autosuggestions # Shell
 	#zsh-history-substring-search zsh-syntax-highlighting
 
 	# Some tools
-	git htop neovim neofetch psmisc wget curl conspy xtools xxd ripgrep strace tree
+	git btop neovim neofetch psmisc wget curl conspy xtools xxd ripgrep strace tree
 	android-tools jq man-pages-posix binutils reboot-mode libinput evtest
 	i2c-tools upower atop powertop libdrm-test-progs rsync busybox-huge
 
